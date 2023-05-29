@@ -211,7 +211,7 @@ function Translator({ className }: { className?: string }) {
             role: "system",
             content: `你是一名翻译，把输入准确翻译成简体中文，不要自己添加内容。使用${additionalNotes}行业相关的术语词典，润色翻译结果，对翻译风格的要求是优雅专业。`
           },
-          ...previousSubtitles.slice(-4),
+          ...previousSubtitles.slice(-2),
           {
             role: "user",
             content: JSON.stringify(input)
