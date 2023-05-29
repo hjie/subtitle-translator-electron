@@ -209,7 +209,7 @@ function Translator({ className }: { className?: string }) {
         messages: [
           {
             role: "system",
-            content: `You are a program responsible for translating subtitles. Your task is to output the specified target language based on the input text and context. just translate no explain. You will receive the subtitles as array that needs to be translated, as well as the previous translation results and next subtitle, conside previous translation and next subtitle as context, prolish translation result. Please do not transliterate the person's name into the local language. Target language: ${targetLanguage}, ${additionalNotes}`
+            content: `你是一名翻译，把我的输入翻译成简体中文，仅翻译不要解释。使用${additionalNotes}行业相关的术语词典，润色翻译结果，去除语法错误。`
           },
           ...previousSubtitles.slice(-4),
           {
