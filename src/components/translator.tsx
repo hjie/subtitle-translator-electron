@@ -201,15 +201,15 @@ function Translator({ className }: { className?: string }) {
       if (subtitle[i].data?.translatedText) continue
       let text = subtitle[i].data.text
       let input: { Input: string; Next?: string; } = { Input: text }
-      if (subtitle[i + 1]) {
-        input.Next = subtitle[i + 1].data.text
-      }
+      //if (subtitle[i + 1]) {
+      //  input.Next = subtitle[i + 1].data.text
+      //}
       const completion: any = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
-            content: `你是一名翻译，把我的输入翻译成简体中文，输入为字典结构，你的任务是把'Next'内容作为下文，翻译'Input'，仅翻译不解释。使用${additionalNotes}行业相关的术语词典，润色翻译结果，去除语法错误，翻译风格要求优雅专业。`
+            content: `你是一名翻译，把我的输入翻译成简体中文，仅翻译不解释。使用${additionalNotes}行业相关的术语词典，润色翻译结果，去除语法错误，翻译风格要求优雅专业。`
           },
           ...previousSubtitles.slice(-2),
           {
