@@ -209,9 +209,9 @@ function Translator({ className }: { className?: string }) {
         messages: [
           {
             role: "system",
-            content: `你是一名翻译，把我的输入翻译成简体中文，仅翻译不解释。使用${additionalNotes}行业相关的术语词典，润色翻译结果，去除语法错误，翻译风格要求优雅专业。`
+            content: `你是一名翻译，把我的输入翻译成简体中文，仅翻译不解释。使用${additionalNotes}行业术语润色翻译结果，去除语法错误，翻译风格要求优雅专业。`
           },
-          ...previousSubtitles.slice(-2),
+          ...previousSubtitles.slice(-4),
           {
             role: "user",
             content: JSON.stringify(input)
