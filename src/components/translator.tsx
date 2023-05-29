@@ -209,7 +209,7 @@ function Translator({ className }: { className?: string }) {
         messages: [
           {
             role: "system",
-            content: `你是一名翻译，把输入准确翻译成简体中文，不要自己添加内容。使用${additionalNotes}行业相关的术语词典，润色翻译结果，对翻译风格的要求是优雅专业。`
+            content: `你是一名翻译，把我的输入翻译成简体中文，输入中的Input部分为要翻译的内容,Next部分为翻译过程中参考的上下文，仅翻译不解释。使用${additionalNotes}行业相关的术语词典，润色翻译结果，去除语法错误，翻译风格要求优雅专业。`
           },
           ...previousSubtitles.slice(-2),
           {
